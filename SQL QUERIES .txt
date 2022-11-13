@@ -1,0 +1,114 @@
+Q1) How many Tweets are from 'Canada' in the covidtweets table ?
+Answer - 
+
+SELECT EasyID, ID, Text, Location
+FROM covidvaccinedb.covid_tweets
+WHERE Location = 'Canada' ; 
+
+Q2) How many tweets are from 'Ottawa' in the 'vaccinated' table ?
+Answer - 
+
+SELECT EasyID, ID, Text, Location
+FROM covidvaccinedb.covid_tweets
+WHERE Location = 'Canada' ; 
+
+Q3) How many tweets were posted between the 7th November and 11th November 2022 in the first dose table ?
+Answer -
+
+SELECT EasyID, ID, Created_at 
+FROM covidvaccinedb.firstdose
+WHERE Created_at BETWEEN '2022-11-07' AND '2022-11-11';
+ 
+Q4) Display all the tweets in the vaccinated table that has the word 'vaccinated' ?
+Answer - 
+
+SELECT EasyID, ID, Created_at, Text 
+FROM covidvaccinedb.vaccinated 
+WHERE Text LIKE '%Vaccinated%' ;
+
+Q5) Give the last 5 tweets from the 'vaccinated' table ?
+Answer - 
+
+SELECT EasyID, ID, Created_at, Text 
+FROM covidvaccinedb.vaccinated
+GROUP BY Created_at 
+ORDER BY Created_at DESC 
+LIMIT 5;
+
+Q6) How many tweets with the keyword 'Vaccinated against' in the 'vaccinated' table ?
+Answer -
+
+SELECT * 
+FROM covidvaccinedb.vaccinated
+WHERE Text LIKE '%vaccinated against%';
+
+Q7) Display all the tweets related to petcare from the vaccinated table 
+Answer - 
+
+SELECT * 
+FROM covidvaccinedb.vaccinated
+WHERE Text LIKE '%Petcare%' ;
+
+Q8) How many rows are there in the table 'Vaccineaftereffect' ?
+Answer - 
+
+SELECT COUNT(*) 
+FROM covidvaccinedb.vaccineaftereffect;
+ 
+Q9) How many rows are there in the 'covid_tweets' table ?
+Answer - 
+
+SELECT COUNT(*) 
+FROM covidvaccinedb.covid_tweets;
+
+Q10) How many tweets with the keyword 'Covid' and Location 'USA' ?
+Answer - 
+
+SELECT * 
+FROM covidvaccinedb.covid_tweets
+WHERE (Text LIKE '%covid%')
+AND (Location LIKE '%USA%');
+
+Q11) How many tweets from the firstdose table indicate the price with keyword '$' ?
+Answer - 
+
+SELECT * 
+FROM covidvaccinedb.firstdose
+WHERE Text LIKE '%$%'
+;
+
+Q12) How many rows are there in the 'firstdose' table ?
+Answer -
+
+SELECT COUNT(*) 
+FROM covidvaccinedb.firstdose;
+
+Q13) Display the last 5 tweets from the covid_tweets table ?
+Answer - 
+
+SELECT EasyID, ID, Created_at, Text 
+FROM covidvaccinedb.covid_tweets
+GROUP BY Created_at 
+ORDER BY Created_at DESC 
+LIMIT 5;
+
+Q14) Display the tewwts giving the information about any 'Covid Relief funds' ?
+Answer - 
+
+SELECT EasyID, ID, Created_at, Text, Location
+FROM covidvaccinedb.covid_tweets
+WHERE Text LIKE '%Covid Relief fund%'
+;
+
+Q15) How many rows are there in the vaccineaftereffect table that contain the word 'death' in the tweets ?
+Answer - 
+
+SELECT COUNT(*) 
+FROM covidvaccinedb.covid_tweets
+WHERE Text LIKE '%deaths%'
+;
+
+
+ 
+
+
